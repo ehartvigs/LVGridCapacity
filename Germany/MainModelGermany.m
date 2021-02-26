@@ -23,34 +23,13 @@ GISData = shaperead(filename,'Selector',{@(v1) (v1<55000) && (v1>1), 'GEOSTAT_gr
 
 % DE load profiles, can be purchased from VDE.
 DemandMix = load('LoadProfiles_DE.mat');
-
-
-% High Consumption
-LoadProfileHH1 = DemandMix.HouseMax;
-LoadProfileHH1 = movmean(LoadProfileHH1,10);
-LoadProfileHH1 = LoadProfileHH1(1:10:end);
-% Medium consumption
-LoadProfileHH3 = DemandMix.HouseAvg;
-LoadProfileHH3 = movmean(LoadProfileHH3,10);
-LoadProfileHH3 = LoadProfileHH3(1:10:end);
-% Low consumption
-LoadProfileHH0 = 0*DemandMix.HouseMin(1:52560); %(1:52414);
-% Apartment
-LoadProfileApt = DemandMix.Apt;
-LoadProfileApt = movmean(LoadProfileApt,10);
-LoadProfileApt = LoadProfileApt(1:10:end);
-
-%LoadHouse = DemandMix.House;
-%LoadAPT = DemandMix.Apt;
-
-
-LoadHouse = [LoadProfileHH0 LoadProfileHH3 LoadProfileHH1];
-LoadAPT = [LoadProfileHH0 LoadProfileApt LoadProfileApt];
+LoadHouse = DemandMix.House;
+LoadAPT = DemandMix.Apt;
 
 
 % Load solar production dataset, from Z. Norwood, E. Nyholm, T. Otanicar, 
-% and F. Johnsson, ìA Geospatial Comparison of Distributed Solar Heat and 
-% Power in Europe and the US,î PLoS One,  NOT INCLUDED
+% and F. Johnsson, ‚ÄúA Geospatial Comparison of Distributed Solar Heat and 
+% Power in Europe and the US,‚Äù PLoS One,  NOT INCLUDED
 kk=load('PV_factor_XYcoordinatesDE.mat');
 PV_factor = kk.PV_factor;
 PV_factor = PV_factor(:,:,1:8760);
