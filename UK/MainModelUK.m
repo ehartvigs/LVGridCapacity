@@ -1,5 +1,5 @@
 %% ----------------------------------------------------------------------
-% This is the main model file for the German version of the network model.
+% This is the main model file for the UK version of the network model.
 % It contains data loading, processing and saving. None of the data files
 % are included in the model package but can be found either on Eurostat or
 % the associated publications.
@@ -23,16 +23,16 @@ GISData = shaperead(filename,'Selector',{@(v1) (v1<550000) && (v1>1), 'GEOSTAT_g
 
 
 % UK load profiles, can be found in D. Murray, L. Stankovic, and V. Stankovic, 
-% ìAn electrical load measurements dataset of United Kingdom households from
-% a two-year longitudinal study,î Sci. data
+% ‚ÄúAn electrical load measurements dataset of United Kingdom households from
+% a two-year longitudinal study,‚Äù Sci. data
 DemandMix = load('loadProfilesUK.mat');
 LoadHouse = DemandMix.House;
 LoadAPT = DemandMix.Apt;
 
 
 % Load solar production dataset, from Z. Norwood, E. Nyholm, T. Otanicar, 
-% and F. Johnsson, ìA Geospatial Comparison of Distributed Solar Heat and 
-% Power in Europe and the US,î PLoS One,  NOT INCLUDED
+% and F. Johnsson, ‚ÄúA Geospatial Comparison of Distributed Solar Heat and 
+% Power in Europe and the US,‚Äù PLoS One,  NOT INCLUDED
 kk=load('PV_factor_XYcoordinatesUK.mat');
 PV_factor = kk.PV_factor;
 PV_X = kk.X;
