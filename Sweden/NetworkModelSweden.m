@@ -475,10 +475,6 @@ while  max(z_earth)>Design_Z
     
 end
 
-%z_loop = repelem(z_earth,NumberOfTransformers);
-%CableSize = mean(Cable);
-
-
 
 
 % Add solar PV systems to each connection point on the feeder in increments
