@@ -1,5 +1,5 @@
 %% ----------------------------------------------------------------------
-% This is the main model file for the German version of the network model.
+% This is the main model file for the Swedish version of the network model.
 % It contains data loading, processing and saving. None of the data files
 % are included in the model package but can be found either on Statistics Sweden or
 % the associated publications and projects.
@@ -29,8 +29,8 @@ DemandAP = Demand.APTLoadProfile;
 
 
 % Load solar production dataset, from Z. Norwood, E. Nyholm, T. Otanicar, 
-% and F. Johnsson, ìA Geospatial Comparison of Distributed Solar Heat and 
-% Power in Europe and the US,î PLoS One,  NOT INCLUDED
+% and F. Johnsson, ‚ÄúA Geospatial Comparison of Distributed Solar Heat and 
+% Power in Europe and the US,‚Äù PLoS One,  NOT INCLUDED
 kk=load('PV_factor_XYcoordinatesSWE.mat');
 PV_factor = kk.PV_factor;
 PV_X = kk.X;
